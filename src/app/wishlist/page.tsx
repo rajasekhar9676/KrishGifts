@@ -53,7 +53,7 @@ export default function WishlistPage() {
       name: item.name,
       price: item.price,
       image: item.image,
-      category: item.category
+      category: item.category,
     })
   }
 
@@ -66,7 +66,7 @@ export default function WishlistPage() {
           name: item.name,
           price: item.price,
           image: item.image,
-          quantity: 1
+          category: item.category
         })
       }
     })
@@ -239,7 +239,7 @@ export default function WishlistPage() {
                         {[...Array(5)].map((_, i) => (
                           <Star
                             key={i}
-                            className={`w-4 h-4 ${i < Math.floor(item.rating) ? 'text-yellow-400 fill-current' : 'text-gray-300'}`}
+                            className={`w-4 h-4 ${i < Math.floor(item.rating ?? 0) ? 'text-yellow-400 fill-current' : 'text-gray-300'}`}
                           />
                         ))}
                       </div>
@@ -314,9 +314,9 @@ export default function WishlistPage() {
                       <div className="flex items-center mb-3">
                         <div className="flex items-center">
                           {[...Array(5)].map((_, i) => (
-                            <Star
+                          <Star
                               key={i}
-                              className={`w-4 h-4 ${i < Math.floor(item.rating) ? 'text-yellow-400 fill-current' : 'text-gray-300'}`}
+                            className={`w-4 h-4 ${i < Math.floor(item.rating ?? 0) ? 'text-yellow-400 fill-current' : 'text-gray-300'}`}
                             />
                           ))}
                         </div>
